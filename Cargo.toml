@@ -2,6 +2,16 @@
 name = "unaccent"
 version = "0.1.0"
 edition = "2021"
+license-file = "LICENSE"
+description = "A Rust crate to remove accents from strings, inspired by PostgreSQL's unaccent extension."
+repository = "https://github.com/crowdtech-io/unaccent"
+readme = "README.md"
+keywords = ["text-processing", "normalization", "unicode", "diacritics", "string-utils"]
+categories = [
+    "text-processing",
+    "internationalization",
+    "command-line-utilities"
+]
 
 [dependencies]
 unicode-normalization = "0.1.24"
