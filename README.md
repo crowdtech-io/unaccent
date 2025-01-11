@@ -1,6 +1,6 @@
 # Unaccent
 
-`unaccent` is a simple and efficient Rust crate designed to remove accents (diacritical marks) from strings. Inspired by the (PostgreSQL `unaccent`)[https://www.postgresql.org/docs/current/unaccent.html] extension, this crate offers an easy-to-use API for developers who need to normalize text by removing accents in their Rust applications.
+`unaccent` is a simple and efficient Rust crate designed to remove accents (diacritical marks) from strings. Inspired by the [PostgreSQL `unaccent`](https://www.postgresql.org/docs/current/unaccent.html) extension, this crate offers an easy-to-use API for developers who need to normalize text by removing accents in their Rust applications.
 
 ## Features
 
@@ -53,7 +53,7 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/unaccent.git
+   git clone https://github.com/crowdtech-io/unaccent.git
    cd unaccent
    ```
 
