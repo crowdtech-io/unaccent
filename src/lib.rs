@@ -8,11 +8,9 @@
 //! ```rust
 //! use unaccent::unaccent;
 //!
-//! fn main() {
-//!     let input = "Café au lait";
-//!     let result = unaccent(input);
-//!     assert_eq!(result, "Cafe au lait");
-//! }
+//! let input = "Café au lait";
+//! let result = unaccent(input);
+//! assert_eq!(result, "Cafe au lait");
 //!
 //! ```
 
