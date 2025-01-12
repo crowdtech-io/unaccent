@@ -1,9 +1,47 @@
+//! # Unaccent
+//!
+//! `unaccent` is a lightweight utility crate designed to remove accents (diacritical marks) 
+//! from strings. Inspired by the PostgreSQL `unaccent` extension, it provides an easy-to-use
+//! function for normalizing text in Rust applications.
+//!
+//! ## Example
+//! ```rust
+//! use unaccent::unaccent;
+//!
+//! fn main() {
+//!     let input = "Café au lait";
+//!     let result = unaccent(input);
+//!     assert_eq!(result, "Cafe au lait");
+//! }
+//!
+//! ```
+
 use unicode_normalization::{UnicodeNormalization, char::is_combining_mark};
 
+/// Removes accents (diacritical marks) from a given string and returns the unaccented version.
+///
+/// This function uses Unicode Normalization Form Decomposed (NFD) to split characters into 
+/// their base characters and diacritical marks. It then filters out the combining marks.
+///
+/// # Arguments
+///
+/// * `input` - A string or a type that can be referenced as a string (e.g., `&str`, `String`).
+///
+/// # Returns
+///
+/// A `String` with all diacritical marks removed.
+///
+/// # Example
+/// ```rust
+/// use unaccent::unaccent;
+///
+/// let result = unaccent("coração");
+/// assert_eq!(result, "coracao");
+/// ```
 pub fn unaccent<T: AsRef<str>>(input: T) -> String {
     input.as_ref().nfd()
-         .filter(|c| !is_combining_mark(*c))
-         .collect()
+        .filter(|c| !is_combining_mark(*c))
+        .collect()
 }
 
 #[cfg(test)]
