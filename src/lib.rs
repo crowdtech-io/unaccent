@@ -41,6 +41,7 @@ pub fn unaccent<T: AsRef<str>>(input: T) -> String {
         .as_ref()
         .nfd()
         .filter(|c| !is_combining_mark(*c))
+        .nfc()
         .collect()
 }
 
@@ -94,5 +95,14 @@ mod tests {
         assert_eq!(unaccent("你好"), "你好");
         assert_eq!(unaccent("résumé"), "resume");
         assert_eq!(unaccent("coöperate"), "cooperate");
+    }
+
+    /// Tests Korean text which does not use combining diacritical marks.
+    #[test]
+    fn test_korean_text() {
+        // Korean characters should remain unchanged since they don't include diacritical marks.
+        assert_eq!(unaccent("한글"), "한글");
+        assert_eq!(unaccent("한국어"), "한국어");
+        assert_eq!(unaccent("안녕하세요"), "안녕하세요");
     }
 }
