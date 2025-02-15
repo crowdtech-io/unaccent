@@ -15,7 +15,7 @@ Add `unaccent` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-unaccent = "0.1.0"
+unaccent = "0.1.1"
 ```
 
 Then, include it in your project:
